@@ -1,0 +1,301 @@
+  1   0              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  2   0              ;                 
+  3   0              ;Transmision RS-232 por software. 
+  4   0              ;115200bps, 8 data bits, no parity, 1 stop bit, no flow control,
+  5   0              ;parte1: transmite por el puerte serie el contenido de la memoria RAM (64 bytes, portid [0-63])
+  6   0              ;parte2: genera numeros pseudo-aleatorios, bucle contador+interrupcion para transmitir numero.
+  7   0              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  8   0              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  9   0              ;declaracion de constantes y variables
+ 10   0              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                  
+ 11   0              :CONSTANT   RS232        FF           ; puerto comunicacion serie es el FF
+ 12   0              ; rx es el bit 0 del puerto FF(entrada)
+ 13   0              ; tx es el bit 7 del puerto FF(salida), esto es porque
+ 14   0              ;el hyperterminal envia primero el LSB, por eso vamos desplazando a la 
+ 15   0              ;izquierda al recibir, y al enviar tambien, con lo que enviamos de nuevo
+ 16   0              ;el LSB primero como corresponde para que lo entienda el hyperterminal
+ 17   0              :NAMEREG    S1           TXREG        ;buffer de transmision
+ 18   0              :NAMEREG    S2           RXREG        ;buffer de recepcion
+ 19   0              :NAMEREG    S3           CONTBIT      ;contador de los 8 bits de datos
+ 20   0              :NAMEREG    S4           CONT1        ;contador de retardo1
+ 21   0              :NAMEREG    S5           CONT2        ;contador de retardo2
+ 22   0              :NAMEREG    S7           CONT_ERRORES ;contador de errores (ahora leído del periférico)
+ 23   0              ;
+ 24   0              :ADDRESS    00           ;el programa se cargara a partir de la dir 00
+ 25   0              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 26   0              ;Inicio del programa
+ 27   0              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 28   0              :DISABLE    INTERRUPT    
+ 29   1 START        :CALL       RECIBE       
+ 30   2              :ENABLE     INTERRUPT    
+ 31   3              :JUMP       START        
+ 32   4              
+ 33   4              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 34   4              ;Rutina de recepcion de caracteres
+ 35   4              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 36   4 RECIBE       ;esperamos a que se reciba un bit de inicio
+ 37   4              :INPUT      RXREG        RS232        
+ 38   5              :AND        RXREG        80           
+ 39   6              :JUMP       NZ           RECIBE       
+ 40   7              :CALL       WAIT_05BIT   
+ 41   8              ;almacenamos los 8 bits de datos
+ 42   8              :LOAD       CONTBIT      09           
+ 43   9 NEXT_RX_BIT  :CALL       WAIT_1BIT    
+ 44   A              :SR0        RXREG        
+ 45   B              :INPUT      S0           RS232        
+ 46   C              :AND        S0           80           
+ 47   D              :OR         RXREG        S0           
+ 48   E              :SUB        CONTBIT      01           
+ 49   F              :JUMP       NZ           NEXT_RX_BIT  
+ 50  10              :RETURN     
+ 51  11              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 52  11              ;Rutina de transmision de caracteres
+ 53  11              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 54  11 TRANSMITE    ;enviamos un bit de inicio
+ 55  11              :LOAD       S0           00           
+ 56  12              :OUTPUT     S0           RS232        
+ 57  13              :CALL       WAIT_1BIT    
+ 58  14              ;enviamos los 8 bits de datos
+ 59  14              :LOAD       CONTBIT      08           
+ 60  15 NEXT_TX_BIT  :OUTPUT     TXREG        RS232        
+ 61  16              :CALL       WAIT_1BIT    
+ 62  17              :SR0        TXREG        
+ 63  18              :SUB        CONTBIT      01           
+ 64  19              :JUMP       NZ           NEXT_TX_BIT  
+ 65  1A              ;enviamos un bit de parada
+ 66  1A              :LOAD       S0           FF           
+ 67  1B              :OUTPUT     S0           RS232        
+ 68  1C              :CALL       WAIT_1BIT    
+ 69  1D              :RETURN     
+ 70  1E              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 71  1E              ;Rutina espera 1 bit (a 9600bps)
+ 72  1E              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 73  1E              
+ 74  1E WAIT_1BIT    :LOAD       CONT1        03           
+ 75  1F ESPERA2      :LOAD       CONT2        22           
+ 76  20 ESPERA1      :SUB        CONT2        01           
+ 77  21              :JUMP       NZ           ESPERA1      
+ 78  22              :SUB        CONT1        01           
+ 79  23              :JUMP       NZ           ESPERA2      
+ 80  24              :RETURN     
+ 81  25              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 82  25              ;Rutina espera 0,5 bits (bit de inicio, a 9600bps)
+ 83  25              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 84  25              
+ 85  25 WAIT_05BIT   :LOAD       CONT1        03           
+ 86  26 ESPERA4      :LOAD       CONT2        10           
+ 87  27 ESPERA3      :SUB        CONT2        01           
+ 88  28              :JUMP       NZ           ESPERA3      
+ 89  29              :SUB        CONT1        01           
+ 90  2A              :JUMP       NZ           ESPERA4      
+ 91  2B              :RETURN     
+ 92  2C              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 93  2C              ; FIN
+ 94  2C              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 95  2C              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 96  2C              ; RUTINA DE ATENCION A LA INTERRUPCI N
+ 97  2C              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 98  2C              
+ 99  2C INSERTA_PALABRA 
+100  2C              
+101  2C              :LOAD       S6           00           ;  ndice para la RAM (cambio s7 por s6)
+102  2D LOOP_MENSAJE 
+103  2D              :INPUT      TXREG        S6           ; Lee desde RAM[s6] 
+104  2E              :ADD        TXREG        00           ; Verifica si es 0
+105  2F              :JUMP       Z            FIN_MENSAJE  ; Si es 0, termina el mensaje
+106  30              :CALL       TRANSMITE    ; Transmite el car cter
+107  31              :ADD        S6           01           ; Incrementa  ndice
+108  32              :JUMP       LOOP_MENSAJE ; Repite el bucle
+109  33 FIN_MENSAJE  
+110  33              :RETURN     
+111  34              
+112  34 ENVIA_LETRA  
+113  34              :LOAD       TXREG        0A           ; Carriage Return
+114  35              :CALL       TRANSMITE    
+115  36              :LOAD       TXREG        0D           ; Line Feed
+116  37              :CALL       TRANSMITE    
+117  38              :LOAD       TXREG        4C           ; "L"
+118  39              :CALL       TRANSMITE    
+119  3A              :LOAD       TXREG        45           ; "E"
+120  3B              :CALL       TRANSMITE    
+121  3C              :LOAD       TXREG        54           ; "T"
+122  3D              :CALL       TRANSMITE    
+123  3E              :LOAD       TXREG        52           ; "R"
+124  3F              :CALL       TRANSMITE    
+125  40              :LOAD       TXREG        41           ; "A"
+126  41              :CALL       TRANSMITE    
+127  42              :LOAD       TXREG        3A           ; ":"
+128  43              :CALL       TRANSMITE    
+129  44              :LOAD       TXREG        20           ; Espacio
+130  45              :CALL       TRANSMITE    
+131  46              :RETURN     
+132  47              
+133  47 RESULTADO    
+134  47              :LOAD       TXREG        0A           ; Carriage Return
+135  48              :CALL       TRANSMITE    
+136  49              :LOAD       TXREG        0D           ; Line Feed
+137  4A              :CALL       TRANSMITE    
+138  4B              :LOAD       TXREG        52           ; "R"
+139  4C              :CALL       TRANSMITE    
+140  4D              :LOAD       TXREG        45           ; "E"
+141  4E              :CALL       TRANSMITE    
+142  4F              :LOAD       TXREG        3A           ; ":"
+143  50              :CALL       TRANSMITE    
+144  51              :LOAD       TXREG        20           ; Espacio
+145  52              :CALL       TRANSMITE    
+146  53              :RETURN     
+147  54              
+148  54              ; Nueva rutina para mostrar mensaje de muchos errores
+149  54 DEMASIADOS_ERRORES 
+150  54              :LOAD       TXREG        0A           ; Carriage Return
+151  55              :CALL       TRANSMITE    
+152  56              :LOAD       TXREG        0D           ; Line Feed
+153  57              :CALL       TRANSMITE    
+154  58              :LOAD       TXREG        4D           ; "M"
+155  59              :CALL       TRANSMITE    
+156  5A              :LOAD       TXREG        55           ; "U"
+157  5B              :CALL       TRANSMITE    
+158  5C              :LOAD       TXREG        43           ; "C"
+159  5D              :CALL       TRANSMITE    
+160  5E              :LOAD       TXREG        48           ; "H"
+161  5F              :CALL       TRANSMITE    
+162  60              :LOAD       TXREG        4F           ; "O"
+163  61              :CALL       TRANSMITE    
+164  62              :LOAD       TXREG        53           ; "S"
+165  63              :CALL       TRANSMITE    
+166  64              :LOAD       TXREG        20           ; Espacio
+167  65              :CALL       TRANSMITE    
+168  66              :LOAD       TXREG        45           ; "E"
+169  67              :CALL       TRANSMITE    
+170  68              :LOAD       TXREG        52           ; "R"
+171  69              :CALL       TRANSMITE    
+172  6A              :LOAD       TXREG        52           ; "R"
+173  6B              :CALL       TRANSMITE    
+174  6C              :LOAD       TXREG        4F           ; "O"
+175  6D              :CALL       TRANSMITE    
+176  6E              :LOAD       TXREG        52           ; "R"
+177  6F              :CALL       TRANSMITE    
+178  70              :LOAD       TXREG        45           ; "E"
+179  71              :CALL       TRANSMITE    
+180  72              :LOAD       TXREG        53           ; "S"
+181  73              :CALL       TRANSMITE    
+182  74              :LOAD       TXREG        21           ; "!"
+183  75              :CALL       TRANSMITE    
+184  76              :JUMP       START        ; Reiniciar con nueva palabra
+185  77              
+186  77 VICTORIA     
+187  77              :LOAD       TXREG        0A           ; Carriage Return
+188  78              :CALL       TRANSMITE    
+189  79              :LOAD       TXREG        0D           ; Line Feed
+190  7A              :CALL       TRANSMITE    
+191  7B              :LOAD       TXREG        57           ; ASCII 'W' = 0x57
+192  7C              :CALL       TRANSMITE    
+193  7D              :LOAD       TXREG        49           ; ASCII 'I' = 0x49
+194  7E              :CALL       TRANSMITE    
+195  7F              :LOAD       TXREG        4E           ; ASCII 'N' = 0x4E
+196  80              :CALL       TRANSMITE    
+197  81              :LOAD       TXREG        21           ; ASCII '!' = 0x21
+198  82              :CALL       TRANSMITE    
+199  83              :JUMP       START        ; Reiniciar con nueva palabra
+200  84              
+201  84              ; Nueva rutina para mostrar contador de errores (ahora lee del periférico)
+202  84 MOSTRAR_ERRORES 
+203  84              :LOAD       TXREG        0A           ; Carriage Return
+204  85              :CALL       TRANSMITE    
+205  86              :LOAD       TXREG        0D           ; Line Feed
+206  87              :CALL       TRANSMITE    
+207  88              :LOAD       TXREG        45           ; "E"
+208  89              :CALL       TRANSMITE    
+209  8A              :LOAD       TXREG        52           ; "R"
+210  8B              :CALL       TRANSMITE    
+211  8C              :LOAD       TXREG        52           ; "R"
+212  8D              :CALL       TRANSMITE    
+213  8E              :LOAD       TXREG        4F           ; "O"
+214  8F              :CALL       TRANSMITE    
+215  90              :LOAD       TXREG        52           ; "R"
+216  91              :CALL       TRANSMITE    
+217  92              :LOAD       TXREG        45           ; "E"
+218  93              :CALL       TRANSMITE    
+219  94              :LOAD       TXREG        53           ; "S"
+220  95              :CALL       TRANSMITE    
+221  96              :LOAD       TXREG        3A           ; ":"
+222  97              :CALL       TRANSMITE    
+223  98              :LOAD       TXREG        20           ; Espacio
+224  99              :CALL       TRANSMITE    
+225  9A              ; Leer contador de errores del periférico (puerto 0x49)
+226  9A              :INPUT      CONT_ERRORES 49           
+227  9B              :LOAD       TXREG        CONT_ERRORES 
+228  9C              :ADD        TXREG        30           ; Convertir a ASCII (0='0', 1='1', etc.)
+229  9D              :CALL       TRANSMITE    
+230  9E              :RETURN     
+231  9F              
+232  9F              ; Rutina simplificada para verificar solo contador de errores
+233  9F CHECK_ERRORES 
+234  9F              ; Verificar contador de errores del periférico
+235  9F              :INPUT      CONT_ERRORES 49           ; Leer contador actual del periférico
+236  A0              :CALL       MOSTRAR_ERRORES ; Mostrar contador actual
+237  A1              
+238  A1              ; Verificar si hay demasiados errores (9 o más)
+239  A1              :LOAD       S6           CONT_ERRORES 
+240  A2              :SUB        S6           09           ; Comparar con 9
+241  A3              :JUMP       NC           DEMASIADOS_ERRORES ; Si contador >= 9, demasiados errores
+242  A4              :JUMP       BUCLE_INTENTOS ; Si no son 9 errores, continuar
+243  A5              
+244  A5 BUCLE_INTENTOS 
+245  A5              ; Ahora probar 4 letras
+246  A5              :CALL       ENVIA_LETRA  
+247  A6              :CALL       RECIBE       ; Recibe letra a probar
+248  A7              :LOAD       TXREG        RXREG        ; Muestra la letra recibida
+249  A8              :CALL       TRANSMITE    
+250  A9              :OUTPUT     RXREG        45           ; Envía letra al comparador
+251  AA              :CALL       WAIT_1BIT    ; Espera
+252  AB              :OUTPUT     RXREG        46           ; Captura el resultado
+253  AC              :CALL       RESULTADO    
+254  AD              :INPUT      TXREG        46           ; Lee resultado de comparaciones
+255  AE              
+256  AE              ; Enviar resultado al periférico contador de errores (puerto 0x47)
+257  AE              :OUTPUT     TXREG        47           ; El periférico evaluará si incrementar errores
+258  AF              
+259  AF              :TR         TXREG        ; Mostrar resultado en formato hexadecimal
+260  B0              :LOAD       S6           TXREG        
+261  B1              :CALL       TRANSMITE    ; Muestra resultado
+262  B2              :XOR        S6           46           ; valor hex de "F"
+263  B3              :JUMP       Z            VICTORIA     ; Si es F (resultado XOR = 0), ir a victoria
+264  B4              :JUMP       CHECK_ERRORES ; Verificar solo contador de errores
+265  B5              
+266  B5 INTERRUP     :DISABLE    INTERRUPT    
+267  B6              :LOAD       TXREG        00           
+268  B7              :CALL       INSERTA_PALABRA 
+269  B8              
+270  B8              ; Reset contador de errores en el periférico para nueva palabra (esto era debug, lo hacemos por consola)
+271  B8              ; LOAD        s0, 00
+272  B8              ; OUTPUT      s0, 48          ; Reset contador de errores (puerto 0x48)
+273  B8              
+274  B8              :CALL       WAIT_1BIT    
+275  B9              :CALL       WAIT_1BIT    ; Espera adicional para estabilizar
+276  BA              
+277  BA              ; Limpiar posible ruido en el buffer de recepción
+278  BA              ; INPUT       s0, rs232       ; Leer y descartar posible ruido
+279  BA              
+280  BA              ; Recibir las 4 letras de la palabra
+281  BA              :CALL       RECIBE       
+282  BB              :OUTPUT     RXREG        41           ; Guarda letra1
+283  BC              :CALL       WAIT_1BIT    
+284  BD              
+285  BD              :CALL       RECIBE       
+286  BE              :OUTPUT     RXREG        42           ; Guarda letra2
+287  BF              :CALL       WAIT_1BIT    
+288  C0              
+289  C0              :CALL       RECIBE       
+290  C1              :OUTPUT     RXREG        43           ; Guarda letra3
+291  C2              :CALL       WAIT_1BIT    
+292  C3              
+293  C3              :CALL       RECIBE       
+294  C4              :OUTPUT     RXREG        44           ; Guarda letra4
+295  C5              :CALL       WAIT_1BIT    
+296  C6              
+297  C6              :JUMP       BUCLE_INTENTOS 
+298  C7              
+299  C7              :RETURNI    ENABLE       
+300  FF              :ADDRESS    FF           
+301  FF              :JUMP       INTERRUP     

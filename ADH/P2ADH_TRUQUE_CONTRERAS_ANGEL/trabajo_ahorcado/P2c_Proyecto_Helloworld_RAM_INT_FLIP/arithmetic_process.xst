@@ -1,0 +1,5 @@
+set -tmpdir "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst/projnav.tmp"
+set -xsthdpdir "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst"
+elaborate
+-ifn arithmetic_process.prj
+-ifmt mixed

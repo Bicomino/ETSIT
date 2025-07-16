@@ -1,0 +1,43 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.00 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.00 secs
+ 
+--> 
+WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/arithmetic_process is now defined in a different file.  It was defined in "C:/Xilinx/Practicas_4AHC/Practica2_Picoblaze/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+WARNING:HDLParsers:3607 - Unit work/arithmetic_process/low_level_definition is now defined in a different file.  It was defined in "C:/Xilinx/Practicas_4AHC/Practica2_Picoblaze/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+WARNING:HDLParsers:3607 - Unit work/addsub8 is now defined in a different file.  It was defined in "C:/Xilinx/Practicas_4AHC/Practica2_Picoblaze/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+WARNING:HDLParsers:3607 - Unit work/addsub8/low_level_definition is now defined in a different file.  It was defined in "C:/Xilinx/Practicas_4AHC/Practica2_Picoblaze/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd" in Library work.
+Architecture low_level_definition of Entity arithmetic_process is up to date.
+Architecture low_level_definition of Entity addsub8 is up to date.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
+ 
+--> 
+
+
+Total memory usage is 567548 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

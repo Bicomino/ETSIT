@@ -1,0 +1,111 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.03 secs
+ 
+--> 
+WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/picoblaze is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/picoblaze.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/picoblaze.vhd".
+WARNING:HDLParsers:3607 - Unit work/picoblaze/Behavioral is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/picoblaze.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/picoblaze.vhd".
+WARNING:HDLParsers:3607 - Unit work/arithmetic_process is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+WARNING:HDLParsers:3607 - Unit work/arithmetic_process/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+WARNING:HDLParsers:3607 - Unit work/addsub8 is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+WARNING:HDLParsers:3607 - Unit work/addsub8/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd".
+WARNING:HDLParsers:3607 - Unit work/carry_flag_logic is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/carry_flag_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/carry_flag_logic.vhd".
+WARNING:HDLParsers:3607 - Unit work/carry_flag_logic/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/carry_flag_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/carry_flag_logic.vhd".
+WARNING:HDLParsers:3607 - Unit work/flip is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/flip.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/flip.vhd".
+WARNING:HDLParsers:3607 - Unit work/flip/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/flip.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/flip.vhd".
+WARNING:HDLParsers:3607 - Unit work/interrupt_capture is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_capture.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_capture.vhd".
+WARNING:HDLParsers:3607 - Unit work/interrupt_capture/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_capture.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_capture.vhd".
+WARNING:HDLParsers:3607 - Unit work/interrupt_logic is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_logic.vhd".
+WARNING:HDLParsers:3607 - Unit work/interrupt_logic/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_logic.vhd".
+WARNING:HDLParsers:3607 - Unit work/IO_strobe_logic is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/IO_strobe_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/IO_strobe_logic.vhd".
+WARNING:HDLParsers:3607 - Unit work/IO_strobe_logic/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/IO_strobe_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/IO_strobe_logic.vhd".
+WARNING:HDLParsers:3607 - Unit work/logical_bus_processing is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/logical_bus_processing.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/logical_bus_processing.vhd".
+WARNING:HDLParsers:3607 - Unit work/logical_bus_processing/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/logical_bus_processing.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/logical_bus_processing.vhd".
+WARNING:HDLParsers:3607 - Unit work/program_counter is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/program_counter.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/program_counter.vhd".
+WARNING:HDLParsers:3607 - Unit work/program_counter/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/program_counter.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/program_counter.vhd".
+WARNING:HDLParsers:3607 - Unit work/register_and_flag_enable is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_and_flag_enable.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_and_flag_enable.vhd".
+WARNING:HDLParsers:3607 - Unit work/register_and_flag_enable/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_and_flag_enable.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_and_flag_enable.vhd".
+WARNING:HDLParsers:3607 - Unit work/register_bank is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd".
+WARNING:HDLParsers:3607 - Unit work/register_bank/Behavioral is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd".
+WARNING:HDLParsers:3607 - Unit work/ram_Nx1 is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd".
+WARNING:HDLParsers:3607 - Unit work/ram_Nx1/Behavioral is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd".
+WARNING:HDLParsers:3607 - Unit work/shift_rotate is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/shift_rotate.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/shift_rotate.vhd".
+WARNING:HDLParsers:3607 - Unit work/shift_rotate/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/shift_rotate.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/shift_rotate.vhd".
+WARNING:HDLParsers:3607 - Unit work/stack_counter is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_counter.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_counter.vhd".
+WARNING:HDLParsers:3607 - Unit work/stack_counter/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_counter.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_counter.vhd".
+WARNING:HDLParsers:3607 - Unit work/stack_ram is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd".
+WARNING:HDLParsers:3607 - Unit work/stack_ram/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd".
+WARNING:HDLParsers:3607 - Unit work/ram_x1s is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd".
+WARNING:HDLParsers:3607 - Unit work/ram_x1s/Behavioral is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd".
+WARNING:HDLParsers:3607 - Unit work/T_state_and_Reset is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/T_state_and_Reset.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/T_state_and_Reset.vhd".
+WARNING:HDLParsers:3607 - Unit work/T_state_and_Reset/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/T_state_and_Reset.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/T_state_and_Reset.vhd".
+WARNING:HDLParsers:3607 - Unit work/zero_flag_logic is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/zero_flag_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/zero_flag_logic.vhd".
+WARNING:HDLParsers:3607 - Unit work/zero_flag_logic/low_level_definition is now defined in a different file.  It was defined in "/home/ise/Desktop/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Picoblaze_Helloworld_RAM_INT_FLIP/P2c_Proyecto_Helloworld_RAM_INT_FLIP/zero_flag_logic.vhd", and is now defined in "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/zero_flag_logic.vhd".
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/IO_strobe_logic.vhd" in Library work.
+Architecture low_level_definition of Entity io_strobe_logic is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/arithmatic.vhd" in Library work.
+Architecture low_level_definition of Entity arithmetic_process is up to date.
+Architecture low_level_definition of Entity addsub8 is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/shift_rotate.vhd" in Library work.
+Architecture low_level_definition of Entity shift_rotate is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/flip.vhd" in Library work.
+Architecture low_level_definition of Entity flip is up to date.
+Compiling vhdl file "/home/ise/Desktop/swap.vhd" in Library work.
+Architecture low_level_definition of Entity swap is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/logical_bus_processing.vhd" in Library work.
+Architecture low_level_definition of Entity logical_bus_processing is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/T_state_and_Reset.vhd" in Library work.
+Architecture low_level_definition of Entity t_state_and_reset is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_and_flag_enable.vhd" in Library work.
+Architecture low_level_definition of Entity register_and_flag_enable is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/carry_flag_logic.vhd" in Library work.
+Architecture low_level_definition of Entity carry_flag_logic is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/zero_flag_logic.vhd" in Library work.
+Architecture low_level_definition of Entity zero_flag_logic is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/program_counter.vhd" in Library work.
+Architecture low_level_definition of Entity program_counter is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/register_bank.vhd" in Library work.
+Architecture behavioral of Entity register_bank is up to date.
+Architecture behavioral of Entity ram_nx1 is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_ram.vhd" in Library work.
+Architecture low_level_definition of Entity stack_ram is up to date.
+Architecture behavioral of Entity ram_x1s is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/stack_counter.vhd" in Library work.
+Architecture low_level_definition of Entity stack_counter is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_capture.vhd" in Library work.
+Architecture low_level_definition of Entity interrupt_capture is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/interrupt_logic.vhd" in Library work.
+Architecture low_level_definition of Entity interrupt_logic is up to date.
+Compiling vhdl file "/home/ise/Desktop/P2c_Picoblaze_ahorcado/P2c_Picoblaze_ahorcado/P2c_Proyecto_Helloworld_RAM_INT_FLIP/picoblaze.vhd" in Library work.
+Architecture behavioral of Entity picoblaze is up to date.
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+
+
+Total memory usage is 581800 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   39 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

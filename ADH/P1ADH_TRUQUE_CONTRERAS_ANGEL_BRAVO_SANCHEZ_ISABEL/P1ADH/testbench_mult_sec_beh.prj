@@ -1,0 +1,2 @@
+vhdl work "mult_sec.vhd"
+vhdl work "testbench_mult_sec.vhd"

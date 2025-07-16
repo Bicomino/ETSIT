@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/DETCP/Desktop/duro/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/DETCP/Desktop/duro/P2c_Proyecto_Helloworld_RAM_INT_FLIP/xst"
+elaborate
+-ifn peri_ahorcado.prj
+-ifmt mixed

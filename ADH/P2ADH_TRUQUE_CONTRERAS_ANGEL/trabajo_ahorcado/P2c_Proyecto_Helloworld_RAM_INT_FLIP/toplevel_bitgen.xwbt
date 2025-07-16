@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\toplevel.ncd
+OUTFILE=C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\toplevel.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP
+LICENSE=ISE
+USER_INFO=210682935_1777487889_210736740_008

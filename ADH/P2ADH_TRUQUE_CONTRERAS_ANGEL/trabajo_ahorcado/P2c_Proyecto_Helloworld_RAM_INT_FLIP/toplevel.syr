@@ -1,0 +1,946 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> WARNING:Xst:1583 - You are using an internal switch '-use_new_parser'.
+WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
+   for the specified device family. You are free to use it in order to take
+   advantage of its enhanced HDL parsing/elaboration capabilities. However,
+   please be aware that you may be impacted by  language support differences.
+   This version may also result in circuit performance and device utilization
+   differences for your particular design. You can always revert back to the
+   default XST solution by setting the "use_new_parser" option to value "no" 
+   on the XST command line or in the XST process properties panel.
+Reading design: toplevel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "toplevel.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "toplevel"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Use New Parser                     : yes
+Top Module Name                    : toplevel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\zero_flag_logic.vhd" into library work
+Parsing entity <zero_flag_logic>.
+Parsing architecture <low_level_definition> of entity <zero_flag_logic>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\T_state_and_Reset.vhd" into library work
+Parsing entity <T_state_and_Reset>.
+Parsing architecture <low_level_definition> of entity <t_state_and_reset>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\tr.vhd" into library work
+Parsing entity <tr>.
+Parsing architecture <low_level_definition> of entity <tr>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\stack_ram.vhd" into library work
+Parsing entity <stack_ram>.
+Parsing architecture <low_level_definition> of entity <stack_ram>.
+Parsing entity <ram_x1s>.
+Parsing architecture <Behavioral> of entity <ram_x1s>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\stack_counter.vhd" into library work
+Parsing entity <stack_counter>.
+Parsing architecture <low_level_definition> of entity <stack_counter>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\shift_rotate.vhd" into library work
+Parsing entity <shift_rotate>.
+Parsing architecture <low_level_definition> of entity <shift_rotate>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\register_bank.vhd" into library work
+Parsing entity <register_bank>.
+Parsing architecture <Behavioral> of entity <register_bank>.
+Parsing entity <ram_Nx1>.
+Parsing architecture <Behavioral> of entity <ram_nx1>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\register_and_flag_enable.vhd" into library work
+Parsing entity <register_and_flag_enable>.
+Parsing architecture <low_level_definition> of entity <register_and_flag_enable>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\program_counter.vhd" into library work
+Parsing entity <program_counter>.
+Parsing architecture <low_level_definition> of entity <program_counter>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\logical_bus_processing.vhd" into library work
+Parsing entity <logical_bus_processing>.
+Parsing architecture <low_level_definition> of entity <logical_bus_processing>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\IO_strobe_logic.vhd" into library work
+Parsing entity <IO_strobe_logic>.
+Parsing architecture <low_level_definition> of entity <io_strobe_logic>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\interrupt_logic.vhd" into library work
+Parsing entity <interrupt_logic>.
+Parsing architecture <low_level_definition> of entity <interrupt_logic>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\interrupt_capture.vhd" into library work
+Parsing entity <interrupt_capture>.
+Parsing architecture <low_level_definition> of entity <interrupt_capture>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\carry_flag_logic.vhd" into library work
+Parsing entity <carry_flag_logic>.
+Parsing architecture <low_level_definition> of entity <carry_flag_logic>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\arithmatic.vhd" into library work
+Parsing entity <arithmetic_process>.
+Parsing architecture <low_level_definition> of entity <arithmetic_process>.
+Parsing entity <addsub8>.
+Parsing architecture <low_level_definition> of entity <addsub8>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\programa_ahorcado.vhd" into library work
+Parsing entity <programa_ahorcado>.
+Parsing architecture <v1> of entity <programa_ahorcado>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\picoblaze.vhd" into library work
+Parsing entity <picoblaze>.
+Parsing architecture <Behavioral> of entity <picoblaze>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\peri_contador_errores.vhd" into library work
+Parsing entity <peri_contador_errores>.
+Parsing architecture <Behavioral> of entity <peri_contador_errores>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\peri_ahorcado.vhd" into library work
+Parsing entity <peri_ahorcado>.
+Parsing architecture <Behavioral> of entity <peri_ahorcado>.
+Parsing VHDL file "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\toplevel_helloworld_RAM_Int.vhd" into library work
+Parsing entity <toplevel>.
+Parsing architecture <behavioral> of entity <toplevel>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <toplevel> (architecture <behavioral>) from library <work>.
+
+Elaborating entity <picoblaze> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <IO_strobe_logic> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <arithmetic_process> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <addsub8> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <shift_rotate> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <tr> (architecture <low_level_definition>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\tr.vhd" Line 35. Case statement is complete. others clause is never selected
+
+Elaborating entity <logical_bus_processing> (architecture <low_level_definition>) from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\logical_bus_processing.vhd" Line 39: Assignment to sel ignored, since the identifier is never used
+
+Elaborating entity <T_state_and_Reset> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <register_and_flag_enable> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <carry_flag_logic> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <zero_flag_logic> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <program_counter> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <register_bank> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <ram_Nx1> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <stack_ram> (architecture <low_level_definition>) with generics from library <work>.
+
+Elaborating entity <ram_x1s> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <stack_counter> (architecture <low_level_definition>) with generics from library <work>.
+
+Elaborating entity <interrupt_capture> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <interrupt_logic> (architecture <low_level_definition>) from library <work>.
+
+Elaborating entity <peri_ahorcado> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <peri_contador_errores> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <programa_ahorcado> (architecture <v1>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <toplevel>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\toplevel_helloworld_RAM_Int.vhd".
+    Found 64x8-bit single-port RAM <Mram_RAM> for signal <RAM>.
+    Found 1-bit register for signal <tx>.
+    Found 8-bit register for signal <rxbuff_out>.
+    Found 8-bit comparator greater for signal <portid[7]_GND_4_o_LessThan_8_o> created at line 196
+    Found 8-bit comparator lessequal for signal <n0015> created at line 204
+    Summary:
+	inferred   1 RAM(s).
+	inferred   9 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  10 Multiplexer(s).
+Unit <toplevel> synthesized.
+
+Synthesizing Unit <picoblaze>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\picoblaze.vhd".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <picoblaze> synthesized.
+
+Synthesizing Unit <IO_strobe_logic>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\IO_strobe_logic.vhd".
+    Found 1-bit register for signal <read_strobe>.
+    Found 1-bit register for signal <write_strobe>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <IO_strobe_logic> synthesized.
+
+Synthesizing Unit <arithmetic_process>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\arithmatic.vhd".
+    Found 1-bit register for signal <carry_out>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <arithmetic_process> synthesized.
+
+Synthesizing Unit <addsub8>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\arithmatic.vhd".
+    Found 1-bit register for signal <Y<1>>.
+    Found 1-bit register for signal <Y<2>>.
+    Found 1-bit register for signal <Y<3>>.
+    Found 1-bit register for signal <Y<4>>.
+    Found 1-bit register for signal <Y<5>>.
+    Found 1-bit register for signal <Y<6>>.
+    Found 1-bit register for signal <Y<7>>.
+    Found 1-bit register for signal <Y<0>>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <addsub8> synthesized.
+
+Synthesizing Unit <shift_rotate>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\shift_rotate.vhd".
+    Found 1-bit register for signal <Y<1>>.
+    Found 1-bit register for signal <Y<2>>.
+    Found 1-bit register for signal <Y<3>>.
+    Found 1-bit register for signal <Y<4>>.
+    Found 1-bit register for signal <Y<5>>.
+    Found 1-bit register for signal <Y<6>>.
+    Found 1-bit register for signal <Y<7>>.
+    Found 1-bit register for signal <carry_out>.
+    Found 1-bit register for signal <Y<0>>.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <shift_rotate> synthesized.
+
+Synthesizing Unit <tr>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\tr.vhd".
+WARNING:Xst:647 - Input <operand<7:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <Y>.
+    Found 16x8-bit Read Only RAM for signal <operand[3]_GND_13_o_wide_mux_0_OUT>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <tr> synthesized.
+
+Synthesizing Unit <logical_bus_processing>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\logical_bus_processing.vhd".
+    Found 1-bit register for signal <Y<1>>.
+    Found 1-bit register for signal <Y<2>>.
+    Found 1-bit register for signal <Y<3>>.
+    Found 1-bit register for signal <Y<4>>.
+    Found 1-bit register for signal <Y<5>>.
+    Found 1-bit register for signal <Y<6>>.
+    Found 1-bit register for signal <Y<7>>.
+    Found 1-bit register for signal <Y<0>>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred  24 Multiplexer(s).
+Unit <logical_bus_processing> synthesized.
+
+Synthesizing Unit <T_state_and_Reset>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\T_state_and_Reset.vhd".
+    Found 1-bit register for signal <reset_delay2>.
+    Found 1-bit register for signal <internal_T_state>.
+    Found 1-bit register for signal <reset_delay1>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <T_state_and_Reset> synthesized.
+
+Synthesizing Unit <register_and_flag_enable>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\register_and_flag_enable.vhd".
+    Found 1-bit register for signal <arith_or_logical_valid>.
+    Found 1-bit register for signal <returni_or_shift_valid>.
+    Found 1-bit register for signal <register_write_valid>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <register_and_flag_enable> synthesized.
+
+Synthesizing Unit <carry_flag_logic>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\carry_flag_logic.vhd".
+    Found 1-bit register for signal <carry_flag>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <carry_flag_logic> synthesized.
+
+Synthesizing Unit <zero_flag_logic>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\zero_flag_logic.vhd".
+    Found 1-bit register for signal <zero_flag>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <zero_flag_logic> synthesized.
+
+Synthesizing Unit <program_counter>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\program_counter.vhd".
+    Found 8-bit register for signal <count_value>.
+    Found 8-bit adder for signal <count_value[7]_GND_19_o_add_1_OUT> created at line 58.
+    Found 8-bit adder for signal <selected_load_value[7]_GND_19_o_add_2_OUT> created at line 60.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <program_counter> synthesized.
+
+Synthesizing Unit <register_bank>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\register_bank.vhd".
+        M = 3
+    Summary:
+	no macro.
+Unit <register_bank> synthesized.
+
+Synthesizing Unit <ram_Nx1>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\register_bank.vhd".
+        M = 3
+    Found 8x1-bit dual-port RAM <Mram_rambit> for signal <rambit>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <ram_Nx1> synthesized.
+
+Synthesizing Unit <stack_ram>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\stack_ram.vhd".
+        M = 2
+        N = 8
+    Found 1-bit register for signal <Dout<1>>.
+    Found 1-bit register for signal <Dout<2>>.
+    Found 1-bit register for signal <Dout<3>>.
+    Found 1-bit register for signal <Dout<4>>.
+    Found 1-bit register for signal <Dout<5>>.
+    Found 1-bit register for signal <Dout<6>>.
+    Found 1-bit register for signal <Dout<7>>.
+    Found 1-bit register for signal <Dout<0>>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <stack_ram> synthesized.
+
+Synthesizing Unit <ram_x1s>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\stack_ram.vhd".
+        M = 2
+    Found 1-bit register for signal <rambit_ff_0>.
+    Found 1-bit register for signal <rambit_ff_1>.
+    Found 1-bit register for signal <rambit_ff_2>.
+    Found 1-bit register for signal <rambit_ff_3>.
+    Found 2 bit to 4 bit decoder compact to one-hot for signal <_n0005> created at line 81
+    Found 1-bit 4-to-1 multiplexer for signal <o> created at line 82.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Decoder(s).
+Unit <ram_x1s> synthesized.
+
+Synthesizing Unit <stack_counter>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\stack_counter.vhd".
+        N = 2
+    Found 1-bit register for signal <count_value<1>>.
+    Found 1-bit register for signal <count_value<0>>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <stack_counter> synthesized.
+
+Synthesizing Unit <interrupt_capture>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\interrupt_capture.vhd".
+    Found 1-bit register for signal <active_interrupt_pulse>.
+    Found 1-bit register for signal <clean_interrupt>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <interrupt_capture> synthesized.
+
+Synthesizing Unit <interrupt_logic>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\interrupt_logic.vhd".
+    Found 1-bit register for signal <shaddow_carry>.
+    Found 1-bit register for signal <shaddow_zero>.
+    Found 1-bit register for signal <interrupt_enable>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <interrupt_logic> synthesized.
+
+Synthesizing Unit <peri_ahorcado>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\peri_ahorcado.vhd".
+WARNING:Xst:647 - Input <readstrobe> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <letra2>.
+    Found 8-bit register for signal <letra3>.
+    Found 8-bit register for signal <letra4>.
+    Found 8-bit register for signal <letra5>.
+    Found 8-bit register for signal <resultado>.
+    Found 8-bit register for signal <letra1>.
+    Found 4-bit register for signal <aux_out>.
+    Found 8-bit comparator equal for signal <data_in[7]_letra1[7]_equal_1_o> created at line 55
+    Found 8-bit comparator equal for signal <data_in[7]_letra2[7]_equal_2_o> created at line 59
+    Found 8-bit comparator equal for signal <data_in[7]_letra3[7]_equal_3_o> created at line 63
+    Found 8-bit comparator equal for signal <data_in[7]_letra4[7]_equal_4_o> created at line 67
+    Summary:
+	inferred  52 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <peri_ahorcado> synthesized.
+
+Synthesizing Unit <peri_contador_errores>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\peri_contador_errores.vhd".
+WARNING:Xst:647 - Input <data_in<7:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <resultado_anterior>.
+    Found 4-bit register for signal <resultado_actual>.
+    Found 8-bit register for signal <contador_errores>.
+    Found 8-bit adder for signal <contador_errores[7]_GND_28_o_add_4_OUT> created at line 1241.
+    Found 4-bit comparator equal for signal <resultado_anterior[3]_data_in[3]_equal_2_o> created at line 46
+    Found 8-bit comparator lessequal for signal <contador_errores[7]_PWR_28_o_LessThan_4_o> created at line 48
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <peri_contador_errores> synthesized.
+
+Synthesizing Unit <programa_ahorcado>.
+    Related source file is "C:\Users\DETCP\Desktop\MARTES17\ahorcado_working\P2c_Proyecto_Helloworld_RAM_INT_FLIP\programa_ahorcado.vhd".
+    Found 16-bit register for signal <dout>.
+    Found 256x16-bit Read Only RAM for signal <address[7]_PWR_29_o_wide_mux_0_OUT>
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <programa_ahorcado> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 11
+ 16x8-bit single-port Read Only RAM                    : 1
+ 256x16-bit single-port Read Only RAM                  : 1
+ 64x8-bit single-port RAM                              : 1
+ 8x1-bit dual-port RAM                                 : 8
+# Adders/Subtractors                                   : 3
+ 8-bit adder                                           : 3
+# Registers                                            : 70
+ 1-bit register                                        : 52
+ 16-bit register                                       : 1
+ 4-bit register                                        : 3
+ 8-bit register                                        : 14
+# Comparators                                          : 8
+ 4-bit comparator equal                                : 1
+ 8-bit comparator equal                                : 4
+ 8-bit comparator greater                              : 1
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 67
+ 1-bit 2-to-1 multiplexer                              : 44
+ 1-bit 4-to-1 multiplexer                              : 8
+ 8-bit 2-to-1 multiplexer                              : 15
+# Decoders                                             : 8
+ 1-of-4 decoder                                        : 8
+# Xors                                                 : 18
+ 1-bit xor2                                            : 18
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <resultado_4> in Unit <periferico> is equivalent to the following 3 FFs/Latches, which will be removed : <resultado_5> <resultado_6> <resultado_7> 
+INFO:Xst:2261 - The FF/Latch <resultado_anterior_0> in Unit <periferico_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_actual_0> 
+INFO:Xst:2261 - The FF/Latch <resultado_anterior_1> in Unit <periferico_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_actual_1> 
+INFO:Xst:2261 - The FF/Latch <resultado_anterior_2> in Unit <periferico_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_actual_2> 
+INFO:Xst:2261 - The FF/Latch <resultado_anterior_3> in Unit <periferico_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_actual_3> 
+WARNING:Xst:1293 - FF/Latch <resultado_4> has a constant value of 0 in block <periferico>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <peri_contador_errores>.
+The following registers are absorbed into counter <contador_errores>: 1 register on signal <contador_errores>.
+Unit <peri_contador_errores> synthesized (advanced).
+
+Synthesizing (advanced) Unit <program_counter>.
+The following registers are absorbed into counter <count_value>: 1 register on signal <count_value>.
+Unit <program_counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <programa_ahorcado>.
+INFO:Xst:3226 - The RAM <Mram_address[7]_PWR_29_o_wide_mux_0_OUT> will be implemented as a BLOCK RAM, absorbing the following register(s): <dout>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 16-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <dout>          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <programa_ahorcado> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ram_Nx1>.
+INFO:Xst:3231 - The small RAM <Mram_rambit> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 1-bit                      |          |
+    |     clkA           | connected to signal <wclk>          | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <a>             |          |
+    |     diA            | connected to signal <d>             |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 1-bit                      |          |
+    |     addrB          | connected to signal <dpra>          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <ram_Nx1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <toplevel>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_RAM> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to internal node          | high     |
+    |     addrA          | connected to signal <port_id<5:0>>  |          |
+    |     diA            | connected to signal <out_port>      |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <toplevel> synthesized (advanced).
+
+Synthesizing (advanced) Unit <tr>.
+INFO:Xst:3231 - The small RAM <Mram_operand[3]_GND_13_o_wide_mux_0_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <operand>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <tr> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 11
+ 16x8-bit single-port distributed Read Only RAM        : 1
+ 256x16-bit single-port block Read Only RAM            : 1
+ 64x8-bit single-port distributed RAM                  : 1
+ 8x1-bit dual-port distributed RAM                     : 8
+# Adders/Subtractors                                   : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 2
+ 8-bit up counter                                      : 2
+# Registers                                            : 160
+ Flip-Flops                                            : 160
+# Comparators                                          : 8
+ 4-bit comparator equal                                : 1
+ 8-bit comparator equal                                : 4
+ 8-bit comparator greater                              : 1
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 66
+ 1-bit 2-to-1 multiplexer                              : 44
+ 1-bit 4-to-1 multiplexer                              : 8
+ 8-bit 2-to-1 multiplexer                              : 14
+# Decoders                                             : 8
+ 1-of-4 decoder                                        : 8
+# Xors                                                 : 18
+ 1-bit xor2                                            : 18
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <resultado_4> has a constant value of 0 in block <peri_ahorcado>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <resultado_5> has a constant value of 0 in block <peri_ahorcado>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <resultado_6> has a constant value of 0 in block <peri_ahorcado>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <resultado_7> has a constant value of 0 in block <peri_ahorcado>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <resultado_actual_0> in Unit <peri_contador_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_anterior_0> 
+INFO:Xst:2261 - The FF/Latch <resultado_actual_1> in Unit <peri_contador_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_anterior_1> 
+INFO:Xst:2261 - The FF/Latch <resultado_actual_2> in Unit <peri_contador_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_anterior_2> 
+INFO:Xst:2261 - The FF/Latch <resultado_actual_3> in Unit <peri_contador_errores> is equivalent to the following FF/Latch, which will be removed : <resultado_anterior_3> 
+INFO:Xst:2261 - The FF/Latch <rxbuff_out_0> in Unit <toplevel> is equivalent to the following 6 FFs/Latches, which will be removed : <rxbuff_out_1> <rxbuff_out_2> <rxbuff_out_3> <rxbuff_out_4> <rxbuff_out_5> <rxbuff_out_6> 
+WARNING:Xst:1710 - FF/Latch <Y_7> (without init value) has a constant value of 0 in block <tr>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Y_4> in Unit <tr> is equivalent to the following FF/Latch, which will be removed : <Y_5> 
+
+Optimizing unit <register_bank> ...
+
+Optimizing unit <toplevel> ...
+
+Optimizing unit <picoblaze> ...
+
+Optimizing unit <addsub8> ...
+
+Optimizing unit <shift_rotate> ...
+
+Optimizing unit <tr> ...
+
+Optimizing unit <logical_bus_processing> ...
+
+Optimizing unit <register_and_flag_enable> ...
+
+Optimizing unit <program_counter> ...
+
+Optimizing unit <stack_ram> ...
+
+Optimizing unit <ram_x1s> ...
+
+Optimizing unit <stack_counter> ...
+
+Optimizing unit <peri_ahorcado> ...
+
+Optimizing unit <peri_contador_errores> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 160
+ Flip-Flops                                            : 160
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : toplevel.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 482
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 14
+#      LUT2                        : 18
+#      LUT2_D                      : 2
+#      LUT3                        : 103
+#      LUT3_D                      : 9
+#      LUT3_L                      : 10
+#      LUT4                        : 208
+#      LUT4_D                      : 19
+#      LUT4_L                      : 26
+#      MUXCY                       : 14
+#      MUXF5                       : 35
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 160
+#      FD                          : 44
+#      FDCE                        : 62
+#      FDE                         : 34
+#      FDPE                        : 3
+#      FDR                         : 6
+#      FDRE                        : 3
+#      FDRSE                       : 8
+# RAMS                             : 25
+#      RAM16X1D                    : 8
+#      RAM32X1S                    : 16
+#      RAMB16_S18                  : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 30
+#      IBUF                        : 2
+#      OBUF                        : 28
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      261  out of   4656     5%  
+ Number of Slice Flip Flops:            160  out of   9312     1%  
+ Number of 4 input LUTs:                463  out of   9312     4%  
+    Number used as logic:               415
+    Number used as RAMs:                 48
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    232    13%  
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 185   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------------------------------------------+--------------------------------------------+-------+
+Control Signal                                                              | Buffer(FF name)                            | Load  |
+----------------------------------------------------------------------------+--------------------------------------------+-------+
+reset                                                                       | IBUF                                       | 63    |
+processor/basic_control/reset_delay2(processor/basic_control/reset_delay2:Q)| NONE(processor/stack_control/count_value_1)| 2     |
+----------------------------------------------------------------------------+--------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 15.460ns (Maximum Frequency: 64.683MHz)
+   Minimum input arrival time before clock: 3.582ns
+   Maximum output required time after clock: 16.603ns
+   Maximum combinational path delay: 5.763ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 15.460ns (frequency: 64.683MHz)
+  Total number of paths / destination ports: 13502 / 475
+-------------------------------------------------------------------------
+Delay:               15.460ns (Levels of Logic = 10)
+  Source:            program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT (RAM)
+  Destination:       processor/zero_logic/zero_flag (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT to processor/zero_logic/zero_flag
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S18:CLK->DO5   12   2.800   0.961  program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT (instruction<5>)
+     RAM16X1D:DPRA0->DPO    1   0.704   0.455  processor/data_registers/bus_width_loop[6].data_register_bit/Mram_rambit (processor/sY_register<6>)
+     LUT3:I2->O           14   0.704   1.079  processor/Mmux_second_operand71 (port_id_6_OBUF)
+     LUT4:I1->O            1   0.704   0.000  Mmux_in_port24521 (Mmux_in_port24521)
+     MUXF5:I1->O           2   0.321   0.482  Mmux_in_port2452_f5 (Mmux_in_port2452)
+     LUT3:I2->O           11   0.704   0.937  Mmux_in_port2471 (Mmux_in_port247)
+     LUT4:I3->O            1   0.704   0.455  Mmux_in_port63_SW0 (N42)
+     LUT3:I2->O            2   0.704   0.451  Mmux_in_port63 (Mmux_in_port63)
+     LUT4:I3->O            2   0.704   0.451  processor/ALU_result<1>33 (processor/ALU_result<1>)
+     LUT4:I3->O            1   0.704   0.424  processor/zero_logic/next_zero_flag38_SW0 (N281)
+     LUT4:I3->O            1   0.704   0.000  processor/zero_logic/next_zero_flag38 (processor/zero_logic/next_zero_flag)
+     FDRE:D                    0.308          processor/zero_logic/zero_flag
+    ----------------------------------------
+    Total                     15.460ns (9.765ns logic, 5.695ns route)
+                                       (63.2% logic, 36.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              3.582ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       processor/basic_control/reset_delay2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to processor/basic_control/reset_delay2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            66   1.218   1.352  reset_IBUF (LED_OBUF)
+     LUT2:I1->O            1   0.704   0.000  processor/basic_control/reset_delay1_reset_input_OR_42_o1 (processor/basic_control/reset_delay1_reset_input_OR_42_o)
+     FD:D                      0.308          processor/basic_control/reset_delay2
+    ----------------------------------------
+    Total                      3.582ns (2.230ns logic, 1.352ns route)
+                                       (62.3% logic, 37.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2783 / 27
+-------------------------------------------------------------------------
+Offset:              16.603ns (Levels of Logic = 8)
+  Source:            program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT (RAM)
+  Destination:       in_port<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT to in_port<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16_S18:CLK->DO5   12   2.800   0.961  program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT (instruction<5>)
+     RAM16X1D:DPRA0->DPO    5   0.704   0.668  processor/data_registers/bus_width_loop[2].data_register_bit/Mram_rambit (processor/sY_register<2>)
+     LUT3:I2->O           95   0.704   1.286  processor/Mmux_second_operand31 (port_id_2_OBUF)
+     LUT4:I3->O            1   0.704   0.424  Mmux_in_port244_SW0 (N221)
+     LUT4_D:I3->O         12   0.704   0.965  Mmux_in_port244 (Mmux_in_port244)
+     LUT4_D:I3->O          1   0.704   0.455  Mmux_in_port2441_SW0 (N261)
+     LUT3:I2->O            1   0.704   0.424  Mmux_in_port2441 (Mmux_in_port2441)
+     LUT4:I3->O            1   0.704   0.420  Mmux_in_port2477 (Mmux_in_port2477)
+     OBUF:I->O                 3.272          in_port_7_OBUF (in_port<7>)
+    ----------------------------------------
+    Total                     16.603ns (11.000ns logic, 5.603ns route)
+                                       (66.3% logic, 33.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               5.763ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       LED (PAD)
+
+  Data Path: reset to LED
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            66   1.218   1.273  reset_IBUF (LED_OBUF)
+     OBUF:I->O                 3.272          LED_OBUF (LED)
+    ----------------------------------------
+    Total                      5.763ns (4.490ns logic, 1.273ns route)
+                                       (77.9% logic, 22.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   15.460|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.61 secs
+ 
+WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
+   for the specified device family. You are free to use it in order to take
+   advantage of its enhanced HDL parsing/elaboration capabilities. However,
+   please be aware that you may be impacted by  language support differences.
+   This version may also result in circuit performance and device utilization
+   differences for your particular design. You can always revert back to the
+   default XST solution by setting the "use_new_parser" option to value "no" 
+   on the XST command line or in the XST process properties panel.
+--> 
+
+Total memory usage is 4503800 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
+Number of infos    :   15 (   0 filtered)
+

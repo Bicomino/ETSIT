@@ -1,0 +1,580 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml toplevel.twx toplevel.ncd -o toplevel.twr toplevel.pcf
+-ucf PicoBlaze_s3estarter.ucf
+
+Design file:              toplevel.ncd
+Physical constraint file: toplevel.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 40%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 18230 paths analyzed, 779 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  19.467ns.
+--------------------------------------------------------------------------------
+
+Paths for end point processor/zero_logic/zero_flag (SLICE_X13Y41.F4), 1784 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.533ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/zero_logic/zero_flag (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.436ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.031ns (0.036 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/zero_logic/zero_flag
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA7     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F3      net (fanout=11)       1.900   instruction<7>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.G2       net (fanout=70)       4.912   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/G
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y24.F3      net (fanout=2)        0.663   processor/ALU_result<4>
+    SLICE_X12Y24.X       Tilo                  0.759   processor/zero_logic/next_zero_flag22
+                                                       processor/zero_logic/next_zero_flag22
+    SLICE_X13Y41.F4      net (fanout=1)        0.660   processor/zero_logic/next_zero_flag22
+    SLICE_X13Y41.CLK     Tfck                  0.837   processor/zero_logic/zero_flag
+                                                       processor/zero_logic/next_zero_flag38
+                                                       processor/zero_logic/zero_flag
+    -------------------------------------------------  ---------------------------
+    Total                                     19.436ns (8.486ns logic, 10.950ns route)
+                                                       (43.7% logic, 56.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.573ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/zero_logic/zero_flag (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.396ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.031ns (0.036 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/zero_logic/zero_flag
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA7     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F3      net (fanout=11)       1.900   instruction<7>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.F2       net (fanout=70)       4.872   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/F
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y24.F3      net (fanout=2)        0.663   processor/ALU_result<4>
+    SLICE_X12Y24.X       Tilo                  0.759   processor/zero_logic/next_zero_flag22
+                                                       processor/zero_logic/next_zero_flag22
+    SLICE_X13Y41.F4      net (fanout=1)        0.660   processor/zero_logic/next_zero_flag22
+    SLICE_X13Y41.CLK     Tfck                  0.837   processor/zero_logic/zero_flag
+                                                       processor/zero_logic/next_zero_flag38
+                                                       processor/zero_logic/zero_flag
+    -------------------------------------------------  ---------------------------
+    Total                                     19.396ns (8.486ns logic, 10.910ns route)
+                                                       (43.8% logic, 56.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.675ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/zero_logic/zero_flag (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.294ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.031ns (0.036 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/zero_logic/zero_flag
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA6     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F2      net (fanout=11)       1.758   instruction<6>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.G2       net (fanout=70)       4.912   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/G
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y24.F3      net (fanout=2)        0.663   processor/ALU_result<4>
+    SLICE_X12Y24.X       Tilo                  0.759   processor/zero_logic/next_zero_flag22
+                                                       processor/zero_logic/next_zero_flag22
+    SLICE_X13Y41.F4      net (fanout=1)        0.660   processor/zero_logic/next_zero_flag22
+    SLICE_X13Y41.CLK     Tfck                  0.837   processor/zero_logic/zero_flag
+                                                       processor/zero_logic/next_zero_flag38
+                                                       processor/zero_logic/zero_flag
+    -------------------------------------------------  ---------------------------
+    Total                                     19.294ns (8.486ns logic, 10.808ns route)
+                                                       (44.0% logic, 56.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F (SLICE_X12Y26.BY), 453 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.617ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      18.338ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.045ns (0.022 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA7     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F3      net (fanout=11)       1.900   instruction<7>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.G2       net (fanout=70)       4.912   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/G
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y26.BY      net (fanout=2)        1.360   processor/ALU_result<4>
+    SLICE_X12Y26.CLK     Tds                   0.461   processor/sY_register<4>
+                                                       processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F
+    -------------------------------------------------  ---------------------------
+    Total                                     18.338ns (7.351ns logic, 10.987ns route)
+                                                       (40.1% logic, 59.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.657ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      18.298ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.045ns (0.022 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA7     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F3      net (fanout=11)       1.900   instruction<7>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.F2       net (fanout=70)       4.872   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/F
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y26.BY      net (fanout=2)        1.360   processor/ALU_result<4>
+    SLICE_X12Y26.CLK     Tds                   0.461   processor/sY_register<4>
+                                                       processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F
+    -------------------------------------------------  ---------------------------
+    Total                                     18.298ns (7.351ns logic, 10.947ns route)
+                                                       (40.2% logic, 59.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.759ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      18.196ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.045ns (0.022 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA6     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F2      net (fanout=11)       1.758   instruction<6>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.G2       net (fanout=70)       4.912   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/G
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y26.BY      net (fanout=2)        1.360   processor/ALU_result<4>
+    SLICE_X12Y26.CLK     Tds                   0.461   processor/sY_register<4>
+                                                       processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_F
+    -------------------------------------------------  ---------------------------
+    Total                                     18.196ns (7.351ns logic, 10.845ns route)
+                                                       (40.4% logic, 59.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G (SLICE_X12Y26.BY), 453 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.636ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      18.319ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.045ns (0.022 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA7     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F3      net (fanout=11)       1.900   instruction<7>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.G2       net (fanout=70)       4.912   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/G
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y26.BY      net (fanout=2)        1.360   processor/ALU_result<4>
+    SLICE_X12Y26.CLK     Tds                   0.442   processor/sY_register<4>
+                                                       processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G
+    -------------------------------------------------  ---------------------------
+    Total                                     18.319ns (7.332ns logic, 10.987ns route)
+                                                       (40.0% logic, 60.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.676ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      18.279ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.045ns (0.022 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA7     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F3      net (fanout=11)       1.900   instruction<7>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.F2       net (fanout=70)       4.872   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/F
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y26.BY      net (fanout=2)        1.360   processor/ALU_result<4>
+    SLICE_X12Y26.CLK     Tds                   0.442   processor/sY_register<4>
+                                                       processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G
+    -------------------------------------------------  ---------------------------
+    Total                                     18.279ns (7.332ns logic, 10.947ns route)
+                                                       (40.1% logic, 59.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.778ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A (RAM)
+  Destination:          processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      18.177ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.045ns (0.022 - 0.067)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A to processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y4.DOA6     Tbcko                 2.812   program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT
+                                                       program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A
+    SLICE_X14Y31.F2      net (fanout=11)       1.758   instruction<6>
+    SLICE_X14Y31.X       Tilo                  0.759   processor/sY_register<1>
+                                                       processor/data_registers/bus_width_loop[1].data_register_bit/Mram_rambit.SLICEM_F
+    SLICE_X26Y26.G2      net (fanout=4)        0.776   processor/sY_register<1>
+    SLICE_X26Y26.Y       Tilo                  0.759   periferico/_n0096_inv
+                                                       processor/Mmux_second_operand21
+    SLICE_X2Y19.G2       net (fanout=70)       4.912   port_id_1_OBUF
+    SLICE_X2Y19.X        Tif5x                 1.152   N22
+                                                       Mram_RAM10/G
+                                                       Mram_RAM10/F5
+    SLICE_X3Y19.F3       net (fanout=1)        0.023   N22
+    SLICE_X3Y19.X        Tilo                  0.704   N341
+                                                       Mmux_in_port153_SW0
+    SLICE_X13Y38.F2      net (fanout=2)        2.016   N341
+    SLICE_X13Y38.X       Tilo                  0.704   processor/ALU_result<4>
+                                                       processor/ALU_result<4>33
+    SLICE_X12Y26.BY      net (fanout=2)        1.360   processor/ALU_result<4>
+    SLICE_X12Y26.CLK     Tds                   0.442   processor/sY_register<4>
+                                                       processor/data_registers/bus_width_loop[4].data_register_bit/Mram_rambit.SLICEM_G
+    -------------------------------------------------  ---------------------------
+    Total                                     18.177ns (7.332ns logic, 10.845ns route)
+                                                       (40.3% logic, 59.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 40%;
+--------------------------------------------------------------------------------
+
+Paths for end point periferico/resultado_3 (SLICE_X41Y26.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.981ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               periferico/aux_out_3 (FF)
+  Destination:          periferico/resultado_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.988ns (Levels of Logic = 0)
+  Clock Path Skew:      0.007ns (0.033 - 0.026)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: periferico/aux_out_3 to periferico/resultado_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y29.XQ      Tcko                  0.474   periferico/aux_out<3>
+                                                       periferico/aux_out_3
+    SLICE_X41Y26.BX      net (fanout=3)        0.421   periferico/aux_out<3>
+    SLICE_X41Y26.CLK     Tckdi       (-Th)    -0.093   periferico/resultado<3>
+                                                       periferico/resultado_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.988ns (0.567ns logic, 0.421ns route)
+                                                       (57.4% logic, 42.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point periferico/resultado_2 (SLICE_X41Y26.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.007ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               periferico/aux_out_2 (FF)
+  Destination:          periferico/resultado_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.014ns (Levels of Logic = 0)
+  Clock Path Skew:      0.007ns (0.033 - 0.026)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: periferico/aux_out_2 to periferico/resultado_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y29.XQ      Tcko                  0.473   periferico/aux_out<2>
+                                                       periferico/aux_out_2
+    SLICE_X41Y26.BY      net (fanout=3)        0.406   periferico/aux_out<2>
+    SLICE_X41Y26.CLK     Tckdi       (-Th)    -0.135   periferico/resultado<3>
+                                                       periferico/resultado_2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.014ns (0.608ns logic, 0.406ns route)
+                                                       (60.0% logic, 40.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point periferico/resultado_1 (SLICE_X40Y27.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.030ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               periferico/aux_out_1 (FF)
+  Destination:          periferico/resultado_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.032ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.004 - 0.002)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: periferico/aux_out_1 to periferico/resultado_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X41Y28.XQ      Tcko                  0.473   periferico/aux_out<1>
+                                                       periferico/aux_out_1
+    SLICE_X40Y27.BX      net (fanout=3)        0.425   periferico/aux_out<1>
+    SLICE_X40Y27.CLK     Tckdi       (-Th)    -0.134   periferico/resultado<1>
+                                                       periferico/resultado_1
+    -------------------------------------------------  ---------------------------
+    Total                                      1.032ns (0.607ns logic, 0.425ns route)
+                                                       (58.8% logic, 41.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 40%;
+--------------------------------------------------------------------------------
+Slack: 16.030ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 8.000ns
+  High pulse limit: 1.588ns (Tbpwh)
+  Physical resource: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT/CLKA
+  Logical resource: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A/CLKA
+  Location pin: RAMB16_X0Y4.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 16.824ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.176ns (314.861MHz) (Tbp)
+  Physical resource: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT/CLKA
+  Logical resource: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A/CLKA
+  Location pin: RAMB16_X0Y4.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.353ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 12.000ns
+  Low pulse limit: 1.588ns (Tbpwl)
+  Physical resource: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT/CLKA
+  Logical resource: program/Mram_address[7]_PWR_29_o_wide_mux_0_OUT.A/CLKA
+  Location pin: RAMB16_X0Y4.CLKA
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   19.467|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 18230 paths, 0 nets, and 1968 connections
+
+Design statistics:
+   Minimum period:  19.467ns{1}   (Maximum frequency:  51.369MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu Jun 19 18:36:54 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4511 MB
+
+
+
